@@ -857,6 +857,27 @@ async function starts() {
 						reply('Gagal menambahkan target, mungkin karena di private')
 					}
 					break
+				case 'nsfwloli':
+				    try {
+						if (!isNsfw) return reply('❌ *FALSE* ❌')
+						res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
+						buffer = await getBuffer(res.url)
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply('❌ *ERROR* ❌')
+					}break
+				case 'nsfwloli':
+				    try {
+						if (!isNsfw) return reply('❌ *FALSE* ❌')
+						res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
+						buffer = await getBuffer(res.url)
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
+					} catch (e) {
+						console.log(`Error :`, color(e,'red'))
+						reply('❌ *ERROR* ❌')
+					}
+					break
 
 				case 'kick':
 					client.updatePresence(from, Presence.composing) 
