@@ -842,6 +842,13 @@ async function starts() {
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					break	
+				case 'lolihentai':
+					gatauda = body.slice(6)
+					reply(mess.wait)
+					anu = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, image, {quoted: mek})
+					break	
 				case 'add':
 					client.updatePresence(from, Presence.composing) 
 					if (!isGroup) return reply(mess.only.group)
