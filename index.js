@@ -14,6 +14,7 @@ const {
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
 const { help } = require('./src/help')
+const { toinnsfw } = require('./src/toinnsfw')
 const { bahasa } = require('./src/bahasa')
 const { negara } = require('./src/kodenegara')
 const { virtex } = require('./src/virtex')
@@ -200,6 +201,10 @@ async function starts() {
 					hisil = fs.readFileSync('./assets/menuimg.jpg')
 					client.sendMessage(from, hisil, image, {quoted: mek, caption: help(prefix), text})
 					break
+					case 'toinmenu':
+					hisil = fs.readFileSync('./assets/menuimg.jpg')
+					client.sendMessage(from, hisil, image, {quoted: mek, caption: toinnsfw(prefix), text})
+					break
                 case 'bahasa':
 		client.sendMessage(from, bahasa(prefix, sender), text, {quoted: mek})
                 break
@@ -241,6 +246,14 @@ async function starts() {
                                         /*if (!isDaftar) return reply(mess.only.daftarB)*/
                                         reply(mess.wait)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomloli?apikey=BotWeA`, {method: 'get'})
+                                        buffer = await getBuffer(anu.result)
+                                        client.sendMessage(from, buffer, image, {quoted: mek})
+								break
+										case 'trap':
+                                        gatauda = body.slice(6)
+                                        /*if (!isDaftar) return reply(mess.only.daftarB)*/
+                                        reply(mess.wait)
+                                        anu = await fetchJson(`ttps://tobz-api.herokuapp.com/api/nsfwtrap`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
                                         client.sendMessage(from, buffer, image, {quoted: mek})
                                         break

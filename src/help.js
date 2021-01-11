@@ -4,7 +4,7 @@ const help = (prefix, botname, oname) => {
 
 ◪ *INFO*
   ❏ Prefix: 「  ${prefix}  」
-  ❏ Creator: OWNER_NAME
+  ❏ Creator: Toin
 ◪ *ABOUT*
   │
   ├─ ❏ ${prefix}info
