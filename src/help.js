@@ -127,3 +127,8 @@ const help = (prefix, botname, oname) => {
 }
 
 exports.help = help
+
+"Menu do Hentaio"
+
+exports.toinmenu = toinmenu
+

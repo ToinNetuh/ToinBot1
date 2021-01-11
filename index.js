@@ -203,7 +203,7 @@ async function starts() {
 					break
 					case 'toinmenu':
 					hisil = fs.readFileSync('./assets/menuimg.jpg')
-					client.sendMessage(from, hisil, image, {quoted: mek, caption: toinnsfw(prefix), text})
+					client.sendMessage(from, hisil, image, {quoted: mek, caption: help(prefix), text})
 					break
                 case 'bahasa':
 		client.sendMessage(from, bahasa(prefix, sender), text, {quoted: mek})
